@@ -38,9 +38,10 @@ public class ProductServiceImpl implements ProductService {
             Product existingProduct = optionalProduct.get();
             existingProduct.setProductName(newProduct.getProductName());
             existingProduct.setProductDescription(newProduct.getProductDescription());
-            existingProduct.setPricing(newProduct.getPricing());
-            existingProduct.setSpecification(newProduct.getSpecification());
-            existingProduct.setAvailability(newProduct.getAvailability());
+            existingProduct.setCategory(newProduct.getCategory());
+            existingProduct.setPrice(newProduct.getPrice());
+            existingProduct.setBrand(newProduct.getBrand());
+            existingProduct.setColor(newProduct.getColor());
             return productRepository.save(existingProduct);
         } else {
             throw new NotFoundException("Product not found with id: " + id);

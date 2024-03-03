@@ -12,9 +12,10 @@ public class Product {
     private Long id;
     private String productName;
     private String productDescription;
-    private Integer pricing;
-    private String specification;
-    private Integer availability;
+    private String category;
+    private Integer price;
+    private String brand;
+    private String color;
 
     public Long getId() {
         return id;
@@ -40,27 +41,35 @@ public class Product {
         this.productDescription = productDescription;
     }
 
-    public Integer getPricing() {
-        return pricing;
+    public String getCategory() {
+        return category;
     }
 
-    public void setPricing(Integer pricing) {
-        this.pricing = pricing;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
-    public String getSpecification() {
-        return specification;
+    public Integer getPrice() {
+        return price;
     }
 
-    public void setSpecification(String specification) {
-        this.specification = specification;
+    public void setPrice(Integer price) {
+        this.price = price;
     }
 
-    public Integer getAvailability() {
-        return availability;
+    public String getBrand() {
+        return brand;
     }
 
-    public void setAvailability(Integer availability) {
-        this.availability = availability;
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
     }
 }

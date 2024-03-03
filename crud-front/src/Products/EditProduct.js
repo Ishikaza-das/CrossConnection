@@ -8,20 +8,16 @@ export default function EditProduct() {
   const [productinfo, setProductinfo] = useState({
     productName: "",
     productDescription: "",
-    pricing: "",
-    specification: "",
-    availability: "",
+    category: "",
+    price: "",
+    brand: "",
+    color: "",
   });
 
   const [productData, setProductData] = useState(null);
 
-  const {
-    productName,
-    productDescription,
-    pricing,
-    specification,
-    availability,
-  } = productinfo;
+  const { productName, productDescription, category, price, brand, color } =
+    productinfo;
 
   const onInputChange = (e) => {
     setProductinfo({ ...productinfo, [e.target.name]: e.target.value });
@@ -36,9 +32,10 @@ export default function EditProduct() {
       setProductinfo({
         productName: productData.productName,
         productDescription: productData.productDescription,
-        pricing: productData.pricing,
-        specification: productData.specification,
-        availability: productData.availability,
+        category: productData.category,
+        price: productData.price,
+        brand: productData.brand,
+        color: productData.color,
       });
     }
   }, [productData]);
@@ -108,41 +105,54 @@ export default function EditProduct() {
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="pricing" className="form-label">
-                Pricing
+              <label htmlFor="category" className="form-label">
+                Category
               </label>
               <input
                 type="text"
                 className="form-control"
-                id="pricing"
-                name="pricing"
-                value={pricing}
+                id="category"
+                name="category"
+                value={category}
                 onChange={onInputChange}
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="specification" className="form-label">
-                Specification
+              <label htmlFor="price" className="form-label">
+                Price
               </label>
               <input
                 type="text"
                 className="form-control"
-                id="specification"
-                name="specification"
-                value={specification}
+                id="price"
+                name="price"
+                value={price}
                 onChange={onInputChange}
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="availability" className="form-label">
-                Availability
+              <label htmlFor="brand" className="form-label">
+                Brand
               </label>
               <input
                 type="text"
                 className="form-control"
-                id="availability"
-                name="availability"
-                value={availability}
+                id="brand"
+                name="brand"
+                value={brand}
+                onChange={onInputChange}
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="color" className="form-label">
+                Color
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="color"
+                name="color"
+                value={color}
                 onChange={onInputChange}
               />
             </div>

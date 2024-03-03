@@ -93,7 +93,7 @@ export default function AddProduct() {
             </div>
             <div className="mb-3">
               <label htmlFor="category" className="form-label">
-                Pricing
+                Category
               </label>
               <input
                 type="text"
@@ -106,7 +106,7 @@ export default function AddProduct() {
             </div>
             <div className="mb-3">
               <label htmlFor="price" className="form-label">
-                Specification
+                Price
               </label>
               <input
                 type="text"
@@ -119,7 +119,7 @@ export default function AddProduct() {
             </div>
             <div className="mb-3">
               <label htmlFor="brand" className="form-label">
-                Availability
+                Brand
               </label>
               <input
                 type="text"
