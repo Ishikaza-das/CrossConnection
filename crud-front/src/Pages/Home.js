@@ -65,9 +65,10 @@ export default function Home() {
                 </td> */}
                 <td>{product.productName}</td>
                 <td>{product.productDescription}</td>
-                <td>{product.pricing}</td>
-                <td>{product.specification}</td>
-                <td>{product.availability}</td>
+                <td>{product.category}</td>
+                <td>{product.price}</td>
+                <td>{product.brand}</td>
+                <td>{product.color}</td>
                 <td>
                   <Link
                     className="btn btn-outline-primary mx-2"
