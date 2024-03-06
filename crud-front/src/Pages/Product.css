@@ -1,0 +1,22 @@
+.container{
+  width: 100%;
+}
+.header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+.title{
+  font-size: 2rem;
+}
+.add-product{
+
+  border-color: blue;
+  background-color: white;
+  border-radius: 9px;
+  cursor: pointer;
+}
+.table{
+  margin-top: 3rem;
+}

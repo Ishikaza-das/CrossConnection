@@ -1,11 +1,9 @@
 package com.example.crud.Controller;
 
-import com.example.crud.Exception.NotFoundException;
+
 import com.example.crud.Model.Product;
-import com.example.crud.Repository.ProductRepository;
 import com.example.crud.Service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
