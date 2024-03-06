@@ -15,10 +15,10 @@ const Navbar = () => {
             <Link id="link" to="/product">
               Product
             </Link>
-            <button>Order</button>
-            <button>Transaction</button>
-            <button>Profile</button>
-            <button>LogOut</button>
+            <Link id="link">Order</Link>
+            <Link id="link">Transaction</Link>
+            <Link id="link">Profile</Link>
+            <Link id="link">LogOut</Link>
           </div>
         </div>
       </nav>
