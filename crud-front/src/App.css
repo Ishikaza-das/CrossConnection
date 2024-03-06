@@ -38,5 +38,5 @@
 }  */
 .App{
   display: grid;
-  grid-template-columns: 12rem 1fr;
+  grid-template-columns: 14rem 1fr;
 } 
