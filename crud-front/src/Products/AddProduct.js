@@ -2,53 +2,50 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 // import ImageUpload from "./ImageUpload";
 
-export default function AddProduct() {
+const AddProduct = () => {
   const navigate = useNavigate();
 
-  const [productinfo, setProductinfo] = useState({
+  const [productInfo, setProductInfo] = useState({
     productName: "",
     productDescription: "",
     category: "",
     price: "",
     brand: "",
     color: "",
-    // image: null, // New state for image
   });
 
-  const {
-    productName,
-    productDescription,
-    category,
-    price,
-    brand,
-    color,
-    // image, // New state for image
-  } = productinfo;
+  // const [selectedFile, setSelectedFile] = useState(null);
 
-  const onInputChange = (e) => {
-    setProductinfo({ ...productinfo, [e.target.name]: e.target.value });
+  const { productName, productDescription, category, price, brand, color } =
+    productInfo;
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setProductInfo({ ...productInfo, [name]: value });
   };
 
-  // const onImageSelect = (selectedFile) => {
-  //   setProductinfo({ ...productinfo, image: selectedFile });
+  // const handleImageSelect = (file) => {
+  //   setSelectedFile(file);
   // };
 
-  const onAdd = async (e) => {
+  const handleAddProduct = async (e) => {
     e.preventDefault();
+
     try {
       const formData = new FormData();
+      // formData.append("file", selectedFile);
       formData.append("productName", productName);
       formData.append("productDescription", productDescription);
       formData.append("category", category);
       formData.append("price", price);
       formData.append("brand", brand);
       formData.append("color", color);
-      // formData.append("image", image); // Append image to form data
 
       const response = await fetch("http://localhost:8080/product", {
         method: "POST",
         body: formData,
       });
+
       if (response.ok) {
         navigate("/");
       } else {
@@ -64,7 +61,9 @@ export default function AddProduct() {
       <div className="row">
         <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 shadow">
           <h2 className="text-center m-4">Add Product</h2>
-          <form onSubmit={onAdd}>
+          <form onSubmit={handleAddProduct}>
+            {/* <ImageUpload onImageSelect={handleImageSelect} /> */}
+
             <div className="mb-3">
               <label htmlFor="productName" className="form-label">
                 Product Name
@@ -75,7 +74,7 @@ export default function AddProduct() {
                 id="productName"
                 name="productName"
                 value={productName}
-                onChange={onInputChange}
+                onChange={handleInputChange}
               />
             </div>
             <div className="mb-3">
@@ -88,7 +87,7 @@ export default function AddProduct() {
                 id="productDescription"
                 name="productDescription"
                 value={productDescription}
-                onChange={onInputChange}
+                onChange={handleInputChange}
               />
             </div>
             <div className="mb-3">
@@ -101,7 +100,7 @@ export default function AddProduct() {
                 id="category"
                 name="category"
                 value={category}
-                onChange={onInputChange}
+                onChange={handleInputChange}
               />
             </div>
             <div className="mb-3">
@@ -114,7 +113,7 @@ export default function AddProduct() {
                 id="price"
                 name="price"
                 value={price}
-                onChange={onInputChange}
+                onChange={handleInputChange}
               />
             </div>
             <div className="mb-3">
@@ -127,7 +126,7 @@ export default function AddProduct() {
                 id="brand"
                 name="brand"
                 value={brand}
-                onChange={onInputChange}
+                onChange={handleInputChange}
               />
             </div>
             <div className="mb-3">
@@ -140,12 +139,10 @@ export default function AddProduct() {
                 id="color"
                 name="color"
                 value={color}
-                onChange={onInputChange}
+                onChange={handleInputChange}
               />
             </div>
-            {/* Include ImageUpload component */}
-            {/* <ImageUpload onImageSelect={onImageSelect} /> */}
-            {/* Button to submit the form */}
+
             <button type="submit" className="btn btn-primary me-2">
               Add
             </button>
@@ -157,4 +154,6 @@ export default function AddProduct() {
       </div>
     </div>
   );
-}
+};
+
+export default AddProduct;

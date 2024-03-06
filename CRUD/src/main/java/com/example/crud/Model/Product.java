@@ -1,9 +1,6 @@
 package com.example.crud.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Product {
@@ -16,6 +13,9 @@ public class Product {
     private Integer price;
     private String brand;
     private String color;
+
+//    @Lob
+//    private byte[] image;
 
     public Long getId() {
         return id;
@@ -72,4 +72,12 @@ public class Product {
     public void setColor(String color) {
         this.color = color;
     }
+
+//    public byte[] getImage() {
+//        return image;
+//    }
+//
+//    public void setImage(byte[] image) {
+//        this.image = image;
+//    }
 }

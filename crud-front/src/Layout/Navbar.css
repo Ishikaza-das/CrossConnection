@@ -1,0 +1,32 @@
+
+.nav-container{
+  display: inline-block;
+}
+.sidenav{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color:#F0F3F4 ;
+  border-radius: 20px;
+  align-items: center;
+}
+.logo{
+  display: block;
+  font-weight: bold;
+  font-size: 2rem;
+}
+.btn-content {
+  padding-top: 8rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem; 
+}
+#link{
+  text-decoration: none;
+  color: #000;
+}
+
+
