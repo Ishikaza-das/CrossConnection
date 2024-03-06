@@ -39,4 +39,5 @@
 .App{
   display: grid;
   grid-template-columns: 14rem 1fr;
+  background-color: rgba(181, 194, 202, 47);
 } 
