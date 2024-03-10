@@ -4,6 +4,8 @@ import Navbar from "./Layout/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import DashBoard from "./Pages/DashBoard";
 import Product from "./Pages/Product";
+import Profile from "./Pages/Profile";
+import AddProduct from "./Products/AddProduct";
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
           <Routes>
             <Route path="/" element={<DashBoard />} />
             <Route path="/product" element={<Product />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/addproduct" element={<AddProduct />} />
           </Routes>
         </div>
       </Router>

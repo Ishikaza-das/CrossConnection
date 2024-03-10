@@ -3,58 +3,95 @@ import { Link, useParams } from "react-router-dom";
 import "./Product.css";
 
 export default function Product() {
-  // const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
 
-  // useEffect(() => {
-  //   loadProducts();
-  // }, []);
+  useEffect(() => {
+    loadProducts();
+  }, []);
 
-  // const loadProducts = async () => {
-  //   try {
-  //     const response = await fetch("http://localhost:8080/products");
-  //     if (!response.ok) {
-  //       throw new Error("Failed to fetch products");
-  //     }
-  //     const result = await response.json();
-  //     setProducts(result);
-  //   } catch (error) {
-  //     console.error("Error fetching products:", error);
-  //   }
-  // };
+  const loadProducts = async () => {
+    try {
+      const response = await fetch("http://localhost:8080/products");
+      if (!response.ok) {
+        throw new Error("Failed to fetch products");
+      }
+      const result = await response.json();
+      setProducts(result);
+    } catch (error) {
+      console.error("Error fetching products:", error);
+    }
+  };
 
-  // const deleteProduct = async (id) => {
-  //   try {
-  //     const response = await fetch(`http://localhost:8080/product/${id}`, {
-  //       method: "DELETE",
-  //     });
-  //     if (!response.ok) {
-  //       throw new Error("Failed to delete product");
-  //     }
-  //     loadProducts(); // Reload products after deletion
-  //   } catch (error) {
-  //     console.error("Error deleting product:", error);
-  //   }
-  // };
+  const deleteProduct = async (id) => {
+    try {
+      const response = await fetch(`http://localhost:8080/product/${id}`, {
+        method: "DELETE",
+      });
+      if (!response.ok) {
+        throw new Error("Failed to delete product");
+      }
+      loadProducts(); // Reload products after deletion
+    } catch (error) {
+      console.error("Error deleting product:", error);
+    }
+  };
 
   return (
     <div className="container">
       <div className="header">
         <div className="title">Product</div>
-        <button className="add-product">Add Product</button>
+        <div>
+          <Link id="link" to="/addproduct">
+            Add Product
+          </Link>
+        </div>
       </div>
       <div className="table">
         <table className="table-head">
-          <tr className="table-row">
-            <th scope="col">Id</th>
-            {/* <th scope="col">Image</th> */}
-            <th scope="col">Product Name</th>
-            <th scope="col">Product Description</th>
-            <th scope="col">Category</th>
-            <th scope="col">Price</th>
-            <th scope="col">Brand</th>
-            <th scope="col">Color</th>
-            <th scope="col">Action</th>
-          </tr>
+          <thead>
+            <tr className="table-row">
+              <th scope="col">Id</th>
+              <th scope="col">Product Name</th>
+              <th scope="col">Product Description</th>
+              <th scope="col">Category</th>
+              <th scope="col">Price</th>
+              <th scope="col">Brand</th>
+              <th scope="col">Color</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((product, index) => (
+              <tr key={index}>
+                <td>{index + 1}</td>
+                <td>{product.productName}</td>
+                <td>{product.productDescription}</td>
+                <td>{product.category}</td>
+                <td>{product.price}</td>
+                <td>{product.brand}</td>
+                <td>{product.color}</td>
+                <td>
+                  <Link
+                    className=""
+                    to={{
+                      pathname: `/editproduct/${product.id}`,
+                      state: { product },
+                    }}
+                  >
+                    Edit
+                  </Link>
+                  <button
+                    className=""
+                    onClick={() => {
+                      deleteProduct(product.id);
+                    }}
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
         </table>
       </div>
     </div>

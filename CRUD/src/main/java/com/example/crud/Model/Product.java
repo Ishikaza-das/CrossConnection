@@ -14,9 +14,6 @@ public class Product {
     private String brand;
     private String color;
 
-//    @Lob
-//    private byte[] image;
-
     public Long getId() {
         return id;
     }
@@ -72,12 +69,4 @@ public class Product {
     public void setColor(String color) {
         this.color = color;
     }
-
-//    public byte[] getImage() {
-//        return image;
-//    }
-//
-//    public void setImage(byte[] image) {
-//        this.image = image;
-//    }
 }
