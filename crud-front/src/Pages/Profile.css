@@ -1,0 +1,13 @@
+.profile-container{
+  width: 1fr;
+  height: 100vh;
+  background-color: #F0F3F4 ;
+  margin-left: 0.5rem;
+  border-radius: 20px;
+}
+.profile-head{
+  padding-left: 2rem;
+  padding-top: 2rem;
+  font-weight: bold;
+  font-size: 30px;
+}
