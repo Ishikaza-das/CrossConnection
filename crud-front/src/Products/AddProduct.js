@@ -66,14 +66,14 @@ const AddProduct = () => {
           <div>
             <label htmlFor="productDescription">Product Description</label>
             <br />
-            <input
+            <textarea
               type="text"
               className="form-input-desc"
               id="productDescription"
               name="productDescription"
               value={productDescription}
               onChange={handleInputChange}
-            />
+            ></textarea>
           </div>
           <br />
 
