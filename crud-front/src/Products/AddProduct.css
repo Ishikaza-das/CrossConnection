@@ -26,14 +26,14 @@ label{
 .form-input-desc{
   width: 36rem;
   border: 1px solid #ddd;
-  border-radius: 3px;
+  border-radius: 7px;
   padding: 7px;
   background-color: white;
   box-shadow: inset 1px 1px 5px rgba(0,0,0,0,0.3);
 }
-/* .form-input-desc{
-  height: 14rem;
-} */
+.form-input-desc{
+  height: 10rem;
+}
 .btn{
   display: flex;
   flex-direction: row;

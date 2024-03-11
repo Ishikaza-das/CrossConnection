@@ -48,7 +48,7 @@ export default function Product() {
       </div>
       <div className="table">
         <table className="table-head">
-          <thead>
+          
             <tr className="table-row">
               <th scope="col">Id</th>
               <th scope="col">Product Name</th>
@@ -59,10 +59,10 @@ export default function Product() {
               <th scope="col">Color</th>
               <th scope="col">Action</th>
             </tr>
-          </thead>
-          <tbody>
+          
+          {/* <tbody> */}
             {products.map((product, index) => (
-              <tr key={index}>
+              <tr key={index} className="table-row">
                 <td>{index + 1}</td>
                 <td>{product.productName}</td>
                 <td>{product.productDescription}</td>
@@ -72,7 +72,7 @@ export default function Product() {
                 <td>{product.color}</td>
                 <td>
                   <Link
-                    className=""
+                    className="edit-link"
                     to={{
                       pathname: `/editproduct/${product.id}`,
                       state: { product },
@@ -81,7 +81,7 @@ export default function Product() {
                     Edit
                   </Link>
                   <button
-                    className=""
+                    className="del-btn"
                     onClick={() => {
                       deleteProduct(product.id);
                     }}
@@ -91,7 +91,7 @@ export default function Product() {
                 </td>
               </tr>
             ))}
-          </tbody>
+          {/* </tbody> */}
         </table>
       </div>
     </div>
